@@ -3,27 +3,27 @@
 ## Tier Definitions
 
 ```mermaid
-graph TD
-    subgraph Tier 0 — In-Memory / Cache
-        T0[Redis, Memcached]
+flowchart TD
+    subgraph t0["Tier 0 - In-Memory / Cache"]
+        T0["Redis, Memcached"]
     end
-    subgraph Tier 1 — Hot
-        T1[PostgreSQL SSD, Elasticsearch]
+    subgraph t1["Tier 1 - Hot"]
+        T1["PostgreSQL SSD, Elasticsearch"]
     end
-    subgraph Tier 2 — Warm
-        T2[S3 Standard, Read Replicas]
+    subgraph t2["Tier 2 - Warm"]
+        T2["S3 Standard, Read Replicas"]
     end
-    subgraph Tier 3 — Cold
-        T3[S3 Infrequent Access]
+    subgraph t3["Tier 3 - Cold"]
+        T3["S3 Infrequent Access"]
     end
-    subgraph Tier 4 — Archive
-        T4[Glacier / Deep Archive]
+    subgraph t4["Tier 4 - Archive"]
+        T4["Glacier / Deep Archive"]
     end
 
     T0 -->|"TTL expiry"| T1
-    T1 -->|"Age > 90 d & access < 1/month"| T2
-    T2 -->|"Age > 365 d"| T3
-    T3 -->|"Age > 7 y or compliance hold"| T4
+    T1 -->|"Age over 90d, rare access"| T2
+    T2 -->|"Age over 365d"| T3
+    T3 -->|"Age over 7y or compliance hold"| T4
 ```
 
 ## Tier Detail
@@ -83,10 +83,10 @@ graph TD
 ```mermaid
 sequenceDiagram
     participant App as Application
-    participant Hot as Tier 1 (PostgreSQL)
-    participant Warm as Tier 2 (S3 Standard)
-    participant Cold as Tier 3 (S3 IA)
-    participant Archive as Tier 4 (Glacier)
+    participant Hot as Tier 1 PostgreSQL
+    participant Warm as Tier 2 S3 Standard
+    participant Cold as Tier 3 S3 IA
+    participant Archive as Tier 4 Glacier
 
     App->>Hot: Write new order
     Note over Hot: Active for 90 days
@@ -96,7 +96,7 @@ sequenceDiagram
     Note over Cold: Retained for up to 7 years
     Cold->>Archive: S3 lifecycle rule transitions objects
     Note over Archive: Retained per regulatory requirement
-    Archive-->>App: Restore on legal / audit request (hours)
+    Archive-->>App: Restore on legal or audit request
 ```
 
 ## Lifecycle Policy Configuration (Example)
