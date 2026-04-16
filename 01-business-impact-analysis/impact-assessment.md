@@ -97,16 +97,13 @@ Impact is scored on a 1–5 scale:
 
 ## Aggregate Impact Heat Map
 
-```mermaid
-block-beta
-    columns 5
-    space "1 h" "4 h" "24 h" "72 h"
-    "Auth"           a1["4.0 🟠"] a2["4.5 🔴"] a3["5.0 🔴"] a4["5.0 🔴"]
-    "Payments"       p1["4.0 🟠"] p2["4.5 🔴"] p3["5.0 🔴"] p4["5.0 🔴"]
-    "Core API"       c1["3.0 🟡"] c2["4.0 🟠"] c3["4.5 🔴"] c4["4.5 🔴"]
-    "Orders"         o1["2.5 🟡"] o2["3.5 🟠"] o3["4.5 🔴"] o4["5.0 🔴"]
-    "Analytics"      n1["1.5 🟢"] n2["1.5 🟢"] n3["2.5 🟡"] n4["3.5 🟠"]
-```
+| Process | 1 h | 4 h | 24 h | 72 h |
+|---------|-----|-----|------|------|
+| **Auth** | 4.0 🟠 | 4.5 🔴 | 5.0 🔴 | 5.0 🔴 |
+| **Payments** | 4.0 🟠 | 4.5 🔴 | 5.0 🔴 | 5.0 🔴 |
+| **Core API** | 3.0 🟡 | 4.0 🟠 | 4.5 🔴 | 4.5 🔴 |
+| **Orders** | 2.5 🟡 | 3.5 🟠 | 4.5 🔴 | 5.0 🔴 |
+| **Analytics** | 1.5 🟢 | 1.5 🟢 | 2.5 🟡 | 3.5 🟠 |
 
 > Scores represent the average across all four impact dimensions. Colour key: 🟢 ≤ 2 | 🟡 2–3 | 🟠 3–4 | 🔴 ≥ 4
 

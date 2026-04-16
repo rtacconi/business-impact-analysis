@@ -57,25 +57,11 @@ flowchart TD
 
 ## Dashboard Layout
 
-```mermaid
-block-beta
-    columns 3
-    block:row1:3
-        A["Total Storage by Tier (pie chart)"]
-        B["Growth Trend — 30/60/90d (line chart)"]
-        C["Cost by Tier (stacked bar)"]
-    end
-    block:row2:3
-        D["PostgreSQL DB Size (table + sparkline)"]
-        E["Top 10 Tables by Size (bar chart)"]
-        F["Redis Memory Utilisation (gauge)"]
-    end
-    block:row3:3
-        G["S3 Bucket Growth (line chart)"]
-        H["Elasticsearch Index Size (heatmap)"]
-        I["Disk Utilisation by Volume (gauge grid)"]
-    end
-```
+| Row | Panel 1 | Panel 2 | Panel 3 |
+|-----|---------|---------|---------|
+| **Overview** | Total Storage by Tier (pie chart) | Growth Trend — 30/60/90d (line chart) | Cost by Tier (stacked bar) |
+| **Databases** | PostgreSQL DB Size (table + sparkline) | Top 10 Tables by Size (bar chart) | Redis Memory Utilisation (gauge) |
+| **Object & Disk** | S3 Bucket Growth (line chart) | Elasticsearch Index Size (heatmap) | Disk Utilisation by Volume (gauge grid) |
 
 ## Alerting Rules
 

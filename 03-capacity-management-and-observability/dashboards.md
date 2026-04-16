@@ -27,25 +27,11 @@ flowchart TD
 
 ### Layout
 
-```mermaid
-block-beta
-    columns 4
-    block:header:4
-        H1["Overall Capacity Health: 🟢 OK"]
-    end
-    block:kpis:4
-        K1["Total Compute\nUtilisation: 62%"]
-        K2["Total Storage\nUsed: 4.2 TB"]
-        K3["Monthly Cloud\nCost: £28,400"]
-        K4["Days to\nCapacity Limit: 94"]
-    end
-    block:charts:4
-        C1["Cost Trend (12 months) — line chart"]
-        C2["Utilisation by Layer — stacked bar"]
-        C3["Growth Forecast — projection line"]
-        C4["Active Alerts — count by severity"]
-    end
-```
+| | Col 1 | Col 2 | Col 3 | Col 4 |
+|---|---|---|---|---|
+| **Header** | Overall Capacity Health: 🟢 OK | | | |
+| **KPIs** | Total Compute Utilisation: 62% | Total Storage Used: 4.2 TB | Monthly Cloud Cost: £28,400 | Days to Capacity Limit: 94 |
+| **Charts** | Cost Trend (12 months) — line | Utilisation by Layer — stacked bar | Growth Forecast — projection line | Active Alerts — count by severity |
 
 ### Key Panels
 
@@ -62,73 +48,31 @@ block-beta
 
 ### Layout
 
-```mermaid
-block-beta
-    columns 3
-    block:row1:3
-        A["Cluster CPU Utilisation (time series)"]
-        B["Cluster Memory Utilisation (time series)"]
-        C["Node Count Over Time (bar)"]
-    end
-    block:row2:3
-        D["Pod CPU Requests vs Limits vs Usage (multi-line)"]
-        E["Pod Memory Working Set vs Limit (multi-line)"]
-        F["CPU Throttle % by Service (heatmap)"]
-    end
-    block:row3:3
-        G["HPA Replica Count (time series)"]
-        H["Pending Pods (time series)"]
-        I["OOM Kills (event list)"]
-    end
-```
+| Row | Panel 1 | Panel 2 | Panel 3 |
+|-----|---------|---------|---------|
+| **Cluster** | Cluster CPU Utilisation (time series) | Cluster Memory Utilisation (time series) | Node Count Over Time (bar) |
+| **Pods** | Pod CPU Requests vs Limits vs Usage (multi-line) | Pod Memory Working Set vs Limit (multi-line) | CPU Throttle % by Service (heatmap) |
+| **Scaling** | HPA Replica Count (time series) | Pending Pods (time series) | OOM Kills (event list) |
 
 ## L1 — Storage Capacity Dashboard
 
 ### Layout
 
-```mermaid
-block-beta
-    columns 3
-    block:row1:3
-        A["Storage by Tier (pie chart)"]
-        B["Storage Growth 30/60/90d (line)"]
-        C["Cost per Tier (stacked bar)"]
-    end
-    block:row2:3
-        D["PostgreSQL Database Sizes (bar + trend)"]
-        E["Top 10 Tables by Size (horizontal bar)"]
-        F["Table Bloat Ratio (heatmap)"]
-    end
-    block:row3:3
-        G["S3 Bucket Size & Object Count (table)"]
-        H["Redis Memory vs Max (gauge per instance)"]
-        I["Disk Utilisation by Volume (gauge grid)"]
-    end
-```
+| Row | Panel 1 | Panel 2 | Panel 3 |
+|-----|---------|---------|---------|
+| **Overview** | Storage by Tier (pie chart) | Storage Growth 30/60/90d (line) | Cost per Tier (stacked bar) |
+| **Databases** | PostgreSQL Database Sizes (bar + trend) | Top 10 Tables by Size (horizontal bar) | Table Bloat Ratio (heatmap) |
+| **Infrastructure** | S3 Bucket Size & Object Count (table) | Redis Memory vs Max (gauge per instance) | Disk Utilisation by Volume (gauge grid) |
 
 ## L1 — Application Capacity Dashboard
 
 ### Layout
 
-```mermaid
-block-beta
-    columns 3
-    block:row1:3
-        A["Request Rate by Service (time series)"]
-        B["p99 Latency by Service (time series)"]
-        C["Error Rate by Service (time series)"]
-    end
-    block:row2:3
-        D["DB Connection Pool Usage (gauge per service)"]
-        E["Queue Depth (time series per queue)"]
-        F["Cache Hit Ratio (gauge per service)"]
-    end
-    block:row3:3
-        G["Active WebSocket Connections (time series)"]
-        H["Background Job Throughput (bar)"]
-        I["Rate Limit Hits (time series)"]
-    end
-```
+| Row | Panel 1 | Panel 2 | Panel 3 |
+|-----|---------|---------|---------|
+| **Traffic** | Request Rate by Service (time series) | p99 Latency by Service (time series) | Error Rate by Service (time series) |
+| **Resources** | DB Connection Pool Usage (gauge per service) | Queue Depth (time series per queue) | Cache Hit Ratio (gauge per service) |
+| **Connections** | Active WebSocket Connections (time series) | Background Job Throughput (bar) | Rate Limit Hits (time series) |
 
 ## Dashboard-as-Code
 
